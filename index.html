@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Salón Aurora – Estilo y Elegancia</title>
+
+  <!-- Google Fonts: display + body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #ff6f91;   /* pink */
+      --secondary: #4a90e2; /* blue */
+      --bg: #f5f9ff;
+      --text: #333;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:focus { outline: 3px solid var(--secondary); outline-offset: 2px; }
+
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0; right: 0;
+      height: 4px;
+      background: var(--secondary);
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 2rem 1rem;
+    }
+    .hero img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .hero p {
+      max-width: 600px;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    .cta {
+      background: var(--secondary);
+      color: #fff;
+      padding: .75rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .3s;
+    }
+    .cta:hover,
+    .cta:focus {
+      background: #357ab8;
+    }
+
+    section { padding: 2rem 1rem; }
+
+    .services {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,.1);
+      text-align: center;
+    }
+    .service-card h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 1rem;
+      font-size: .9rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Salón Aurora</h1>
+    <p>Tu estilo, nuestra pasión</p>
+  </header>
+
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80"
+         alt="Mujer con peinado elegante">
+    <p>En Salón Aurora transformamos cada visita en una experiencia de cuidado y creatividad. Nuestros estilistas combinan técnica y tendencia para que tu cabello hable por ti.</p>
+    <button class="cta"
+            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+      Reserva tu cita
+    </button>
+  </section>
+
+  <section>
+    <h2 style="text-align:center; color:var(--primary);">Servicios</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>Corte & Peinado</h3>
+        <p>Desde cortes clásicos hasta estilos vanguardistas, adaptados a tu personalidad.</p>
+      </div>
+      <div class="service-card">
+        <h3>Coloración</h3>
+        <p>Balayage, reflejos o tintes sólidos, con productos de alta calidad.</p>
+      </div>
+      <div class="service-card">
+        <h3>Tratamientos</h3>
+        <p>Mascarillas nutritivas y tratamientos de keratina para revitalizar tu melena.</p>
+      </div>
+      <div class="service-card">
+        <h3>Eventos</h3>
+        <p>Peinados y maquillaje para bodas, sesiones fotográficas y eventos especiales.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="background:var(--primary); color:#fff;">
+    <h2 style="text-align:center;">Contáctanos</h2>
+    <p style="text-align:center;">
+      Llámanos al <a href="tel:+34123456789">+34 123 456 789</a> o visítanos en Calle del Arte 12, Madrid.
+    </p>
+    <p style="text-align:center;">Horario: L‑V 9:00‑20:00, S 9:00‑14:00</p>
+  </section>
+
+  <footer>
+    © 2026 Salón Aurora – Todos los derechos reservados.
+  </footer>
+
+  <script>
+    // Smooth‑scroll fallback for browsers que no soportan scrollIntoView con behavior
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
